@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# d3.js Dashboard for the NYC Property Sales Dataset
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Dataset source: https://www.kaggle.com/datasets/new-york-city/nyc-property-sales
 
-## Available Scripts
+Simple dashboard showcasing a bar chart for visualizing categorical variables and a histogram for visualizing numerical variables. Scatter plot for visualizing two variables.
 
-In the project directory, you can run:
+![dashboard preview](public/preview.png)
 
-### `npm start`
+## Attributes
+_The following list and descriptions only contain the 16 attributes used in the project out of the total 22_
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- BOROUGH: A digit code representing the borough in which the corresponding property is located in.
+    - 1: Manhattan, 2: Bronx, 3: Brooklyn, 4: Queens, 5: Staten Island
+- NEIGHBORHOOD: The neighborhood name that the NYC Department of Finance designates in which the corresponding property is located in.
+- TAX CLASS AT PRESENT: The tax class in which the corresponding property is assigned to currently.
+    - Class 1: Mostly residential property of up to 3 units
+    - Class 2: All other residential properties (co-ops and condos)
+    - Class 3: Property with equipment owned by utility companies
+    - Class 4: Other properties not included in Class 1, 2, or 3, such as offices, factories, etc.
+- BLOCK: A subdivision of the borough. Distinguishes a unit of real property from another, such as different condos in a single building.
+- BUILDING CLASS AT PRESENT: Describes a building’s constructive use.
+    - Classes from “A” to “Z”, with some examples below:
+        - “A”: One family dwellings
+        - “B”: Two family dwellings
+        - …
+        - “Y”: Government/city departments
+        - “Z”: Misc. building classifications (tennis courts, UN, post office, etc.)
+- ZIP CODE: The corresponding property’s postal code
+- RESIDENTIAL UNITS: The number of residential units at the corresponding property
+- COMMERCIAL UNITS: The number of commercial units at the corresponding property
+- TOTAL UNITS: The total number of units at the corresponding property
+- LAND SQUARE FEET: The land area of the corresponding property
+- GROSS SQUARE FEET: Total area of all the floors in a building, including the land area and space within any building/structure on the property
+- YEAR BUILT: Year that the corresponding property was built
+- TAX CLASS AT TIME OF SALE: The tax class in which the corresponding property was assigned to at the time of sale
+- BUILDING CLASS AT TIME OF SALE: The building’s constructive use at the time of sale
+- SALE PRICE: Price paid for the property
+- SALE DATE: Date in which the property was sold
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Note: Extremely low sales prices indicate a transfer of ownership, but these cases (< $500) were removed from the data in this project
